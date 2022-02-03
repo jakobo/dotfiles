@@ -1,10 +1,7 @@
-# OSX-only stuff. Abort if not OSX.
-is_osx || return 1
+# Homebrew for all!
 
-# Install Homebrew.
 if [[ ! "$(type -P brew)" ]]; then
-  e_header "Installing Homebrew"
-  true | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Exit if, for some reason, Homebrew is not installed.
@@ -13,8 +10,6 @@ fi
 e_header "Updating Homebrew"
 brew doctor
 brew update
-
-# Functions used in subsequent init scripts.
 
 # Tap Homebrew kegs.
 function brew_tap_kegs() {

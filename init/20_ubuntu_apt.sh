@@ -25,28 +25,16 @@ function add_ppa() {
 
 # Misc.
 apt_packages+=(
-  awscli
   build-essential
   cmatrix
-  cowsay
   curl
-  docker.io
-  docker-compose
   git-core
   groff
-  hollywood
-  htop
-  id3tool
-  imagemagick
-  jq
-  mercurial
   nmap
   postgresql
   python-pip
-  silversearcher-ag
   sl
   telnet
-  thefuck
   tree
 )
 
