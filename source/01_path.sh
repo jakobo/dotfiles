@@ -1,17 +1,15 @@
-paths=(
-  ~/.local/bin
-  $DOTFILES/bin
-  ~/bin
-  /usr/local/bin
-  $JAVA_HOME
-  $ANDROID_HOME/tools/bin
-  $ANDROID_HOME/tools
-  $ANDROID_HOME/platform-tools
-  $PATH
-)
+# Dotfiles
+path+=("~/.local/bin")
+path+=("$DOTFILES/bin")
+
+# User Bins
+path+=("$HOME/bin")
+path+=("/usr/local/bin")
+
+# Android
+path+=("$JAVA_HOME")
+path+=("$ANDROID_HOME/tools/bin")
+path+=("$ANDROID_HOME/tools")
+path+=("$ANDROID_HOME/platform-tools")
 
 export PATH
-for p in "${paths[@]}"; do
-  [[ -d "$p" ]] && PATH="$p:$(path_remove "$p")"
-done
-unset p paths

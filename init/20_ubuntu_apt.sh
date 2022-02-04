@@ -36,6 +36,7 @@ apt_packages+=(
   sl
   telnet
   tree
+  zsh
 )
 
 apt_packages+=(vim)
