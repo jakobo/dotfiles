@@ -1,0 +1,7 @@
+# Do not sync config unless explicitly opted in
+/*
+
+# Opt In List
+!.gitignore
+!oh-my-posh
+!thefuck
