@@ -31,50 +31,15 @@ apt_packages+=(
   git-core
   groff
   nmap
-  postgresql
-  python-pip
   sl
   telnet
   tree
+  wget
   zsh
 )
 
 apt_packages+=(vim)
 is_ubuntu_desktop && apt_packages+=(vim-gnome)
-
-# https://github.com/neovim/neovim/wiki/Installing-Neovim
-add_ppa ppa:neovim-ppa/stable
-apt_packages+=(neovim)
-
-# https://launchpad.net/~stebbins/+archive/ubuntu/handbrake-releases
-add_ppa ppa:stebbins/handbrake-releases
-apt_packages+=(handbrake-cli)
-is_ubuntu_desktop && apt_packages+=(handbrake-gtk)
-
-# https://github.com/rvm/ubuntu_rvm
-add_ppa ppa:rael-gc/rvm
-apt_packages+=(rvm)
-
-# https://github.com/rbenv/ruby-build/wiki
-apt_packages+=(
-  autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev
-  libncurses5-dev libffi-dev libgdbm3 libgdbm-dev zlib1g-dev
-)
-
-# https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-16-04
-add_ppa ppa:ansible/ansible
-apt_packages+=(ansible)
-
-# http://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/
-add_ppa ppa:jonathonf/vim
-apt_packages+=(vim)
-
-# https://launchpad.net/~hnakamur/+archive/ubuntu/tmux
-add_ppa ppa:hnakamur/tmux
-
-# https://github.com/greymd/tmux-xpanes
-add_ppa ppa:greymd/tmux-xpanes
-apt_packages+=(tmux-xpanes)
 
 if is_ubuntu_desktop; then
   # http://www.omgubuntu.co.uk/2016/06/install-latest-arc-gtk-theme-ubuntu-16-04

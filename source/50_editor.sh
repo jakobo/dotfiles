@@ -1,6 +1,6 @@
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='code'
+	export EDITOR='vi'
 else
-	export EDITOR='nano'
+	export EDITOR='code'
 fi

@@ -33,6 +33,8 @@ Any file in the `/copy` subdirectory will be copied into `~/`. Any file that _ne
 
 Any file in the `/link` subdirectory gets symlinked into `~/` with `ln -s`. Edit one or the other, and you change the file in both places. Don't link files containing sensitive data, or you might accidentally commit that data! If you're linking a directory that might contain sensitive data (like `~/.ssh`) add the sensitive files to your [.gitignore](.gitignore) file!
 
+There is a dedicated `.gitignore` for the `.config` directory that ignores everything by default
+
 ### The "init" step
 
 Scripts in the `/init` subdirectory will be executed. A whole bunch of things will be installed, but _only_ if they aren't already.

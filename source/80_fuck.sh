@@ -1,0 +1,1 @@
+bin_in_path fuck && eval $(thefuck --alias)

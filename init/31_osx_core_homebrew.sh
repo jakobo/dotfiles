@@ -9,6 +9,7 @@ recipes=(
   coreutils
   automake
   autoconf
+  curl
   gpg
   openssl
   libyaml
@@ -20,6 +21,11 @@ recipes=(
   xz
   wget
   zlib
+)
+
+# https://github.com/phpbrew/phpbrew/wiki/Requirement
+recipes+=(
+  bison re2c
 )
 
 brew_install_recipes
