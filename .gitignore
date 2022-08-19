@@ -7,6 +7,11 @@
 /link/.ssh/*.pem
 /link/.ssh/known_hosts*
 
+# gnupg - save config, ignore everything else
+/link/.gnupg/*
+!/link/.gnupg/gpg.conf
+!/link/.gnupg/gpg-agent.conf
+
 # Don't commit Vim plugins, vim-plug will install them.
 /link/.vim/plugged
 

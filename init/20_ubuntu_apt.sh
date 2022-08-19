@@ -29,6 +29,7 @@ apt_packages+=(
   cmatrix
   curl
   git-core
+  gnupg
   groff
   nmap
   sl

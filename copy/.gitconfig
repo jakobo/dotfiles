@@ -1,6 +1,7 @@
 [user]
   name = Jakob Heuser
-  email = EMAIL
+  email = EMAIL_IS_NOT_SET
+  signingkey = SIGNING_KEY_IS_NOT_SET
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
@@ -38,6 +39,10 @@
   added = yellow
   changed = green
   untracked = cyan
+[commit]
+  gpgsign = true
+[init]
+  defaultBranch = main
 [push]
   default = simple
 [merge]
@@ -46,6 +51,8 @@
   cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [rerere]
   enabled = 1
+[tag]
+  gpgSign = true
 [url "git@github.com:"]
   insteadOf = "gh:"
   pushInsteadOf = "github:"
