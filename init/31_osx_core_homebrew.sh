@@ -16,6 +16,8 @@ recipes=(
   readline
   libxslt
   libtool
+  pintentry
+  pinentry-mac
   sqlite3
   unixodbc
   xz

@@ -19,11 +19,12 @@ function add_ppa() {
   apt_source_files+=("${parts[1]}-ubuntu-${parts[2]}-$release_name")
 }
 
-#############################
+####################################
 # WHAT DO WE NEED TO INSTALL?
-#############################
+# Look for "INSTALL:" to find blocks
+####################################
 
-# Misc.
+# INSTALL: CORE & SECURITY
 apt_packages+=(
   build-essential
   cmatrix
@@ -32,6 +33,7 @@ apt_packages+=(
   gnupg
   groff
   nmap
+  pinentry-tty
   sl
   telnet
   tree
@@ -42,6 +44,7 @@ apt_packages+=(
 apt_packages+=(vim)
 is_ubuntu_desktop && apt_packages+=(vim-gnome)
 
+# INSTALL: DESKTOP APPS
 if is_ubuntu_desktop; then
   # http://www.omgubuntu.co.uk/2016/06/install-latest-arc-gtk-theme-ubuntu-16-04
   # apt_keys+=(http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key)
@@ -117,7 +120,7 @@ if is_ubuntu_desktop; then
     silentcast
   )
 
-  # Misc
+  # INSTALL: APPLICATIONS
   apt_packages+=(adb fastboot)
   apt_packages+=(
     chromium-browser

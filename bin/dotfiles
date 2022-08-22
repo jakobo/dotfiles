@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-[[ "$1" == "source" ]] || \
 
-echo 'Dotfiles'
-echo 'Originally created by "Cowboy" Ben Alman - http://benalman.com/'
+# Originally created by "Cowboy" Ben Alman - http://benalman.com/
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 
