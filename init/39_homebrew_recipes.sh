@@ -8,6 +8,7 @@ kegs=(
 
 # Common Homebrew recipes
 recipes=(
+  asdf
   awscli
   awsebcli
   composer # php please die in a fire
@@ -17,8 +18,6 @@ recipes=(
   jandedobbeleer/oh-my-posh/oh-my-posh
   jq
   php # note: php's virtual environment support is fucking awful
-  rbenv # rbenv
-  ruby-build # rbenv
   thefuck
 )
 

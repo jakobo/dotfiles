@@ -22,3 +22,12 @@ function dotfiles() {
 }
 
 src
+
+# yarn
+# see node setup
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# pnpm
+# placeholder
+# see init/50_node.sh
+# pnpm end

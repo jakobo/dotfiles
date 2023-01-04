@@ -44,6 +44,12 @@ apt_packages+=(
 apt_packages+=(vim)
 is_ubuntu_desktop && apt_packages+=(vim-gnome)
 
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt
+apt_keys+=(https://cli.github.com/packages/githubcli-archive-keyring.gpg)
+apt_source_files+=(github-cli.list)
+apt_source_texts+=("deb [arch=amd64] https://cli.github.com/packages stable main")
+alt_packages+=(gh)
+
 # INSTALL: DESKTOP APPS
 if is_ubuntu_desktop; then
   # http://www.omgubuntu.co.uk/2016/06/install-latest-arc-gtk-theme-ubuntu-16-04

@@ -30,4 +30,7 @@ recipes+=(
   bison re2c
 )
 
+# https://github.com/cli/cli/tree/trunk#macos
+recipes+=(gh)
+
 brew_install_recipes
