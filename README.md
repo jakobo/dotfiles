@@ -6,6 +6,17 @@
 - Sets a bunch of normal defaults for today's code workflows where we get nice things like GUIs
 - Based on the battle tested dotfiles scripts of ["Cowboy" Ben Alman](https://github.com/cowboy/dotfiles) with a few years of divergent evolution
 
+# Tool Install Priority
+
+Tools that are installed are either **versioned** and need shimming in order to switch easily, or are **unversioned** and we only install the latest version of a tool. Where possible, versioned tools go into `asdf` plugins, while items without a shim or cannot be easily shimmed (php) are installed via homebrew/linuxbrew.
+
+Core libraries or tools where shimming doesn't make sense are installed via the OS specific package manager:
+
+- ubuntu @ `init/20_ubuntu_apt.sh`
+- mac os @ `init/31_osx_core_homebrew.sh` (requires homebrew setup to complete)
+
+In general, higher level abstractions occur later in the `init/` and tools tend towards the higher level abstractions to make their management easier. There's a preference to avoid language-specific shims such as `rbenv` or `volta`. It's not that these tools are bad, but rather having a single shiming tool makes it easier to reason about when something goes wrong.
+
 # How the "dotfiles" command works
 
 When [dotfiles][dotfiles] is run for the first time, it does a few things:
@@ -49,7 +60,7 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 ## Ubuntu
 
 ```sh
-bash -c "$(wget -qO- https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)" && source ~/.bashrc
+bash -c "$(wget -qO- https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)" && source ~/.zshrc
 ```
 
 The Ubuntu setup works in WSL in addition to traditional Ubuntu-land. Either way, you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first.
@@ -59,7 +70,7 @@ _Tested in Ubuntu 14.04 LTS_
 ## macOS
 
 ```sh
-bash -c "$(curl -fsSL https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)" && source ~/.bashrc
+bash -c "$(curl -fsSL https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)" && source ~/.zshrc
 ```
 
 You need to have [XCode](https://developer.apple.com/downloads/index.action?=xcode) or, at the very minimum, the [XCode Command Line Tools](https://developer.apple.com/downloads/index.action?=command%20line%20tools), which are available as a much smaller download.

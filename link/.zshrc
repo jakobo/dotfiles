@@ -31,3 +31,6 @@ src
 # placeholder
 # see init/50_node.sh
 # pnpm end
+
+# added by pipx (https://github.com/pipxproject/pipx)
+export PATH="/home/jakobo/.local/bin:$PATH"
