@@ -13,6 +13,7 @@ recipes=(
   awsebcli
   composer # php please die in a fire
   curl
+  direnv
   docker
   heroku
   jandedobbeleer/oh-my-posh/oh-my-posh

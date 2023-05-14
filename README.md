@@ -8,14 +8,13 @@
 
 # Tool Install Priority
 
-Tools that are installed are either **versioned** and need shimming in order to switch easily, or are **unversioned** and we only install the latest version of a tool. Where possible, versioned tools go into `asdf` plugins, while items without a shim or cannot be easily shimmed (php) are installed via homebrew/linuxbrew.
+Tools that are installed are either **versioned** and need shimming in order to switch easily, or are **unversioned** and we only install the latest version of a tool.
 
-Core libraries or tools where shimming doesn't make sense are installed via the OS specific package manager:
+- **versioned** tools are installed as an `asdf` plugin
+- **unversioned** (and difficult to version) tools are installed as a Homebrew / Linuxbrew
+- **unversioned and OS-specific** tools are installed using the OS's native package manager (`init/20_ubuntu_apt.sh` and `init/31_osx_core_homebrew.sh`)
 
-- ubuntu @ `init/20_ubuntu_apt.sh`
-- mac os @ `init/31_osx_core_homebrew.sh` (requires homebrew setup to complete)
-
-In general, higher level abstractions occur later in the `init/` and tools tend towards the higher level abstractions to make their management easier. There's a preference to avoid language-specific shims such as `rbenv` or `volta`. It's not that these tools are bad, but rather having a single shiming tool makes it easier to reason about when something goes wrong.
+There's a preference to avoid language-specific shims such as `rbenv` or `volta`. It's not that these tools are bad, but rather having a single shiming tool reduces cognitive load.
 
 # How the "dotfiles" command works
 
