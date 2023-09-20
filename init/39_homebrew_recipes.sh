@@ -15,6 +15,7 @@ recipes=(
   curl
   direnv
   docker
+  go-task/tap/go-task
   heroku
   jandedobbeleer/oh-my-posh/oh-my-posh
   jq
