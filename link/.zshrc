@@ -23,14 +23,7 @@ function dotfiles() {
 
 src
 
-# yarn
-# see node setup
-# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# If you see code below this line,
+# it was injected by an installer and needs to be managed
+# =======================================================
 
-# pnpm
-# placeholder
-# see init/50_node.sh
-# pnpm end
-
-# added by pipx (https://github.com/pipxproject/pipx)
-export PATH="/home/jakobo/.local/bin:$PATH"

@@ -11,15 +11,14 @@ recipes=(
   asdf
   awscli
   awsebcli
-  composer # php please die in a fire
+  caddy
   curl
   direnv
   docker
   go-task/tap/go-task
-  heroku
   jandedobbeleer/oh-my-posh/oh-my-posh
   jq
-  php # note: php's virtual environment support is fucking awful
+  pulumi
   thefuck
 )
 

@@ -3,7 +3,7 @@
 is_wsl || return 1
 
 ### WSL Patch (needed until host binding is fixed)
-$DOTFILES/bin/wsl-host-patch/WSLHostPatcher.exe | grep -iv "dll" | sed -e '/^/ s/^/🔗  /'
+# $DOTFILES/bin/wsl-host-patch/WSLHostPatcher.exe | grep -iv "dll" | sed -e '/^/ s/^/🔗  /'
 
 ### Send all XConfig to Windows
 export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')

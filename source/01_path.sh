@@ -11,7 +11,7 @@ function bin_in_path {
   fi
 }
 
-# Dotfiles
+# Dotfiles and pipx (https://github.com/pipxproject/pipx)
 path+=("~/.local/bin")
 path+=("$DOTFILES/bin")
 

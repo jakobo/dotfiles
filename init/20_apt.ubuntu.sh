@@ -8,6 +8,7 @@ apt_packages=()
 deb_installed=()
 deb_sources=()
 
+
 installers_path="$DOTFILES/caches/installers"
 
 # Ubuntu distro release name, eg. "xenial"
@@ -49,6 +50,11 @@ apt_keys+=(https://cli.github.com/packages/githubcli-archive-keyring.gpg)
 apt_source_files+=(github-cli.list)
 apt_source_texts+=("deb [arch=amd64] https://cli.github.com/packages stable main")
 alt_packages+=(gh)
+
+# MongoDB Tools
+# https://www.mongodb.com/docs/database-tools/installation/installation-linux/
+deb_installed+=(/usr/bin/mongodump)
+deb_sources+=(https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.9.4.deb)
 
 # INSTALL: DESKTOP APPS
 if is_ubuntu_desktop; then
