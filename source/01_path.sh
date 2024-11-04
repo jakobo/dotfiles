@@ -12,7 +12,7 @@ function bin_in_path {
 }
 
 # Dotfiles and pipx (https://github.com/pipxproject/pipx)
-path+=("~/.local/bin")
+path+=("$HOME/.local/bin")
 path+=("$DOTFILES/bin")
 
 # User Bins
