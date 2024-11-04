@@ -8,7 +8,7 @@ is_wsl || return 1
 ### Send all XConfig to Windows
 export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')
 export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
-export WSL_CLIENT=$(bash.exe -c "ip addr show eth0 | grep -oP '(?<=inet\s)\d+(.\d+){3}'")
+export WSL_CLIENT=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(.\d+){3}')
 
 # Disable browser call as WSL can't open browsers reliably
 # export DISPLAY=$WSL_HOST:0
