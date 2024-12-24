@@ -28,3 +28,9 @@
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
+
+# Oh my posh backups
+link/.config/oh-my-posh/themes/*.bak
+
+# thefuck caches
+link/.config/thefuck/__pycache__
