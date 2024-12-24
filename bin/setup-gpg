@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# generate key
+echo "gpg --full-generate-key"
+
+# get the public key using key ID
+echo "gpg --armor --export XXXXXX"
+
+# set the key ID in git
+echo "git config --global user.signingkey XXXXXXX"
+
+# always sign commits
+echo "git config commit.gpgsign true"

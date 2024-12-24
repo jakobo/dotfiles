@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+echo "Oh come on... you can't just copy/paste this"
+
+# generate key
+echo 'Create the key:'
+echo '  ssh-keygen -t ed25519 -C "your_email@example.com"'
+echo ''
+echo 'If you are using a legacy system that does not support the Ed25519 algorithm, use:'
+echo '  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"'
+
+# Start agent
+echo 'Start the agent:'
+echo '  eval "$(ssh-agent -s)"'
+
+# Touch your ssh config
+echo 'Touch your ssh config location'
+echo '  touch ~/.ssh/config'
+touch ~/.ssh/config
+
+# Add your key to the agent
+echo 'Add your key to the agent:'
+echo 'Host github.com'
+echo '  AddKeysToAgent yes'
+echo '  UseKeychain yes'
+echo '  IdentityFile ~/.ssh/id_ed25519'
+
+# Add to keychain
+echo 'Add your key to the keychain:'
+echo '  ssh-add --apple-use-keychain ~/.ssh/id_ed25519'

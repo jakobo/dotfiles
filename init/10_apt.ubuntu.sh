@@ -13,4 +13,13 @@ sudo apt-add-repository ppa:git-core/ppa
 sudo apt-get update
 
 # Install
-sudo apt install build-essential curl git-core gpg nmap pinentry-tty telnet wget zsh
+sudo apt install \
+  build-essential \
+  curl \
+  git-core \
+  gpg \
+  nmap \
+  pinentry-tty \
+  telnet \
+  wget \
+  zsh
