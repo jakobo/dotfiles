@@ -5,16 +5,31 @@
 - Adds features for working in WSL/WSL2 under Windows
 - Sets a bunch of normal defaults for today's code workflows where we get nice things like GUIs
 - Based on the battle tested dotfiles scripts of ["Cowboy" Ben Alman](https://github.com/cowboy/dotfiles) with a few years of divergent evolution
+  - I just deleted a lot of stuff I didn't need, but the init and source logic is a thing of beauty
 
-# Tool Install Priority
+# OSX
 
-Tools that are installed are either **versioned** and need shimming in order to switch easily, or are **unversioned** and we only install the latest version of a tool.
+**BEFORE YOU BEGIN**
 
-- **versioned** tools are installed as an `asdf` plugin
-- **unversioned** (and difficult to version) tools are installed as a Homebrew / Linuxbrew
-- **unversioned and OS-specific** tools are installed using the OS's native package manager (`init/20_ubuntu_apt.sh` and `init/31_osx_core_homebrew.sh`)
+Install XCode https://apps.apple.com/us/app/xcode/id497799835?mt=12
 
-There's a preference to avoid language-specific shims such as `rbenv` or `volta`. It's not that these tools are bad, but rather having a single shiming tool reduces cognitive load.
+Unfortunately, XCode is required for some older brews and it's only in the mac app store. You could install this with `mas` but older systems can't install `mas` either. So like, one manual step. I'm sorry, future me.
+
+```sh
+bash -c "$(curl -fsSL https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)"
+```
+
+_Tested in OSX 11.7.10_
+
+## Ubuntu / WSL
+
+```sh
+bash -c "$(wget -qO- https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)"
+```
+
+The Ubuntu setup works in WSL in addition to traditional Ubuntu-land. Either way, you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first.
+
+_Tested in Ubuntu 24 LTS via WSL_
 
 # How the "dotfiles" command works
 
@@ -27,6 +42,16 @@ When [dotfiles][dotfiles] is run for the first time, it does a few things:
 5. You are prompted to choose scripts in `/init` to be executed. The installer attempts to only select relevant scripts, based on the detected OS and the script filename. Your chosen init scripts are executed (in alphanumeric order, hence the funky names). ([read more](#the-init-step))
 
 On subsequent runs, step 1 is skipped, step 2 just updates the already-existing repo, and step 5 remembers what you selected the last time. The other steps are the same.
+
+# Tool Install Priority
+
+Tools that are installed are either **versioned** and need shimming in order to switch easily, or are **unversioned** and we only install the latest version of a tool.
+
+- **versioned** tools are installed as an `asdf` plugin
+- **unversioned** (and difficult to version) tools are installed as a Homebrew / Linuxbrew
+- **unversioned and OS-specific** tools are installed using the OS's native package manager (`init/20_ubuntu_apt.sh` and `init/31_osx_core_homebrew.sh`)
+
+There's a preference to avoid language-specific shims such as `rbenv` or `volta`. It's not that these tools are bad, but rather having a single shiming tool reduces cognitive load.
 
 ## Other subdirectories
 
@@ -51,32 +76,6 @@ There is a dedicated `.gitignore` for the `.config` directory that ignores almos
 ## The "init" step
 
 Scripts in the `/init` subdirectory will be executed. A whole bunch of things will be installed, but _only_ if they aren't already.
-
-# Installation
-
-There's a lot of stuff that requires admin access via `sudo`, so be warned that you might need to enter your password here or there.
-
-## Ubuntu
-
-```sh
-bash -c "$(wget -qO- https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)" && source ~/.zshrc
-```
-
-The Ubuntu setup works in WSL in addition to traditional Ubuntu-land. Either way, you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first.
-
-_Tested in Ubuntu 14.04 LTS_
-
-## macOS
-
-```sh
-bash -c "$(curl -fsSL https://raw.github.com/jakobo/dotfiles/main/bin/dotfiles)" && source ~/.zshrc
-```
-
-You need to have [XCode](https://developer.apple.com/downloads/index.action?=xcode) or, at the very minimum, the [XCode Command Line Tools](https://developer.apple.com/downloads/index.action?=command%20line%20tools), which are available as a much smaller download.
-
-The easiest way to install the XCode Command Line Tools in OSX 10.9+ is to open up a terminal, type `xcode-select --install` and [follow the prompts](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
-
-_Tested in OSX 10.15_
 
 # Aliases and Functions
 
